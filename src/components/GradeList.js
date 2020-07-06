@@ -3,7 +3,7 @@ import GradeDataService from '../services/GradeService';
 import { Link } from 'react-router-dom';
 
 const GradeList = () => {
-  const [grade, setGrade] = useState([]);
+  const [grades, setGrade] = useState([]);
   const [currentGrade, setCurrentGrade] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [searchName, setSearchName] = useState('');
@@ -87,9 +87,9 @@ const GradeList = () => {
         <h4>Grade List</h4>
 
         <ul className="list-group">
-          {grade &&
-            grade.map((grade, index) => {
-              return <li
+          {grades &&
+            grades.map((grade, index) => (
+              <li
                 className={
                   'list-group-item ' + (index === currentIndex ? 'active' : '')
                 }
@@ -98,8 +98,7 @@ const GradeList = () => {
               >
                 {grade.name}
               </li>
-            })
-            }
+            ))}
         </ul>
 
         <button className="m-3 btn btn-sm btn-danger" onClick={removeAllGrade}>
