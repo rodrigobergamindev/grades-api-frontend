@@ -87,7 +87,8 @@ const GradeList = () => {
         <h4>Grade List</h4>
 
         <ul className="list-group">
-          {grades &&
+
+          {grades === undefined ? 'Loading...' : 
             grades.map((grade, index) => (
               <li
                 className={
