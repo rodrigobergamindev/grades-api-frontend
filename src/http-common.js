@@ -8,3 +8,4 @@ export default axios.create({
   },
 });
 
+console.log(process.env.REACT_APP_API_URL)
