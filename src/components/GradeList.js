@@ -88,8 +88,8 @@ const GradeList = () => {
 
         <ul className="list-group">
           {grade &&
-            grade.map((grade, index) => (
-              <li
+            grade.map((grade, index) => {
+              return <li
                 className={
                   'list-group-item ' + (index === currentIndex ? 'active' : '')
                 }
@@ -98,7 +98,8 @@ const GradeList = () => {
               >
                 {grade.name}
               </li>
-            ))}
+            })
+            }
         </ul>
 
         <button className="m-3 btn btn-sm btn-danger" onClick={removeAllGrade}>
